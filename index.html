@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>JKCS Advanced Asset Tracking</title>
+
+    <!-- Bootstrap CSS (dark-friendly) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        /* Ensure overall dark mode */
+        html, body {
+            height: 100%;
+            background-color: #0b1220;
+            color: #e9ecef;
+        }
+        /* Make offcanvas visually dark and full-height */
+        .offcanvas {
+            background-color: #111418;
+            color: #e9ecef;
+        }
+        /* Small separator above the offcanvas footer */
+        .offcanvas-footer {
+            border-top: 1px solid rgba(255,255,255,0.06);
+            padding-top: .75rem;
+            padding-bottom: .75rem;
+        }
+        /* Keep main content spaced below sticky navbar */
+        main { padding-top: 4.25rem; }
+    </style>
+</head>
+<body class="bg-dark text-light">
+
+    <!-- Sticky navbar -->
+    <nav class="navbar navbar-dark bg-dark shadow sticky-top">
+        <div class="container-fluid">
+            <button class="btn btn-outline-light me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#mainOffcanvas" aria-controls="mainOffcanvas" aria-label="Open navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand fw-bold" href="#">JKCS Advanced Asset Tracking</a>
+            <div class="d-flex">
+                <button class="btn btn-sm btn-outline-light" id="dummyAction">Action</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Offcanvas navigation -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="mainOffcanvas" aria-labelledby="mainOffcanvasLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="mainOffcanvasLabel">Navigation</h5>
+            <button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+
+        <div class="offcanvas-body d-flex flex-column">
+            <!-- nav links -->
+            <nav class="nav flex-column mb-3">
+                <a class="nav-link text-light" href="#">Dashboard</a>
+                <a class="nav-link text-light" href="#">Assets</a>
+                <a class="nav-link text-light" href="#">Tracking</a>
+                <a class="nav-link text-light" href="#">Reports</a>
+                <a class="nav-link text-light" href="#">Settings</a>
+            </nav>
+
+            <!-- optional extra content -->
+            <div class="mb-3">
+                <small class="text-muted">Signed in as <strong>admin</strong></small>
+            </div>
+
+            <!-- footer stuck to bottom -->
+            <div class="mt-auto offcanvas-footer">
+                <div class="d-flex justify-content-between align-items-center">
+                    <small class="text-muted">&copy; <span id="year"></span> JKCS</small>
+                    <small class="text-muted">v1.0</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main content -->
+    <main class="container py-4">
+        <div class="p-4 rounded-3" style="background: rgba(255,255,255,0.02);">
+            <h1 class="h4">Welcome</h1>
+            <p class="mb-0">This is the JKCS Advanced Asset Tracking frontend starter page (dark mode).</p>
+        </div>
+    </main>
+
+    <!-- jQuery, then Bootstrap bundle -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // small helpers
+        $('#year').text(new Date().getFullYear());
+        // optional: example jQuery hook
+        $('#dummyAction').on('click', function(){ alert('Action clicked'); });
+    </script>
+</body>
+</html>
