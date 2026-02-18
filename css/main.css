@@ -1,0 +1,22 @@
+/* Ensure overall dark mode */
+        html, body {
+            height: 100%;
+            background-color: #0b1220;
+            color: #e9ecef;
+        }
+        /* Make offcanvas visually dark and full-height */
+        .offcanvas {
+            background-color: #111418;
+            color: #e9ecef;
+        }
+        .offcanvas .nav-link { color: #cdd6dd; }
+        .offcanvas .nav-link:hover { color: #ffffff; }
+        /* Small separator above the offcanvas footer */
+        .offcanvas-footer {
+            border-top: 1px solid rgba(255,255,255,0.06);
+            padding-top: .75rem;
+            padding-bottom: .75rem;
+        }
+        /* Keep main content spaced below sticky navbar */
+        main { padding-top: 4.25rem; }
+        .nav-section { font-size: .85rem; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-top: .5rem; }
